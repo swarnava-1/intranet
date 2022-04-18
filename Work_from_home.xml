@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<layout>
+    <default>
+        <head>
+            <title>Portals leave- leave Management</title>
+            <meta_keywords>Portals leave - leave Management Keyword</meta_keywords>
+            <meta_description>Portals leave - leave Management Desc</meta_description>
+            <css>/assets/vendor/datatables/dataTables.bootstrap4.min.css</css>
+            <css>/assets/css/bootstrap-duallistbox.css</css>
+            <js>/assets/vendor/datatables/jquery.dataTables.min.js</js>  
+            <js>/assets/vendor/datatables/dataTables.bootstrap4.js</js>  
+            <js>/assets/js/demo/datatables-demo.js</js>  
+            <js>/assets/js/jquery.bootstrap-duallistbox.js</js>       
+        </head>
+    </default>    
+    <index template="layout/page/layout">
+        <body>
+            <col-main>
+                <block template="user/work_from_home/wfh_listing" />
+            </col-main>
+        </body>
+    </index>
+    
+    <add template="layout/page/layout">
+        <body>
+            <col-main>
+                <block template="user/work_from_home/wfh_add" />
+            </col-main>
+        </body>
+    </add>
+    <edit template="layout/page/layout">
+        <body>
+            <col-main>
+                <block template="user/work_from_home/wfh_edit" />
+            </col-main>
+        </body>
+    </edit>
+    
+</layout>
