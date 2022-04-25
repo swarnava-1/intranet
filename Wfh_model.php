@@ -76,16 +76,61 @@ class Wfh_model extends CI_Model {
         $flag =$this->db->update('total_wfh', $now_date);
         return $flag;
     }
-    public function previous_wfh($wfh_date_to,$user_id)
+    public function previous_wfh($wfh_date_to,$user_id,$wfh_date_from)
     {
-        $this->db->select("wfh_date_to");
+        $this->db->select("wfh_date_to,wfh_date_from");
         $this->db->from("work_from_home");
         $this->db->limit(1);
-        $this->db->where('user_id',$user_id);
+        //$this->db->where('user_id',$user_id);
         
         $this->db->order_by('id',"DESC");
-        //$this->db->where('user_id',$user_id);
+        $this->db->where('user_id',$user_id);
         $query = $this->db->get();
-        $result = $query->result();
+        return  $query->result();
+        
     }
+    // public function get_all_monthly_wfh($user_id) {
+
+    // 	$this->db->select('wfh_count');
+    // 	$this->db->from('monthly_wfh');
+	// 	$this->db->where('user_id',$user_id);
+    //     $query=$this->db->get();
+    //     return $query->result();
+
+    
+    // }
+    public function get_curent_monthly_wfh($user_id)
+    {
+       $this->db->select('wfh_count');
+       $this->db->from('monthly_wfh');
+     
+       $this->db->where('user_id',$user_id);
+       $this->db->where('month',$month);
+    //    $query=$this->db->get();
+       return $query->result();
+    }
+    public function update_day_monthly($now_date_count_monthly,$user_id){
+        $this->db->where('user_id',$user_id);
+        $flag =$this->db->update('monthly_wfh', $now_date_count_monthly);
+        return $flag;
+    }
+    // public function get_all_month($user_id) {
+
+    // 	$this->db->select('month');
+    // 	$this->db->from('monthly_wfh');
+	// 	$this->db->where('user_id',$user_id);
+    //     $query=$this->db->get();
+    //     return $query->result();
+
+    
+    // }
+    public function get_all_monthly_wfh() {
+
+    	$this->db->select('*');
+    	$this->db->from('monthly_wfh');
+		$query = $this->db->get();
+		return $query->result();
+    
+   }
+
 }

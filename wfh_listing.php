@@ -55,6 +55,103 @@ $message = $this->session->flashdata('work_from_home');
     </div>
   </div>
 </div>
+<!-- Menu List-->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <div class="clearfix card-header">
+      <div class="float-left">
+      <h6 class="m-0 font-weight-bold text-primary"> Work from home left for this year- <?php echo $data['total_wfh'][0]->wfh_count;?></h6>
+      </div>
+      <!-- <div class="float-right">
+        <select name="menu_type_search" id="menu_type_search" class="form-control" onchange="getmenu(this.value,'dataTable tbody','table')">
+          <option value="BM">Backend Menu</option>
+          <option value="FM">Frontend Menu</option>
+        </select>
+      </div>       -->
+    </div>
+  </div>
+</div>
+<!-- <div class="form-group row">
+                        <div class="col-md-4 mb-4">
+                        <label>Month</label><label style="color:red">*</label>
+                        <select class="form-control" required="" id="" name=" " required>
+                        <option value="">Select Month</option>
+                        <?php foreach($data['month'] as $month){?>
+                                <option value="<?php echo $month->id;?>"><?php echo $month->month;?></option>
+                        <?php } ?>
+                        </select>
+                        
+                        </div>
+                    </div>
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <div class="clearfix card-header">
+      <div class="float-left">
+      <h6 class="m-0 font-weight-bold text-primary"> Work from home left for this month - <div class="form-group row">
+                        <div class="col-md-4 mb-4">
+                        <label>Month</label><label style="color:red">*</label>
+                        <select class="form-control" required="" id="role_id" name="role_id" required>
+                        <option value="">Select Month</option>
+                        <?php foreach($data['monthly_wfh'] as $month){?>
+                                <option value="<?php echo $month->id;?>"><?php echo $month->wfh_count;?></option>
+                        <?php } ?>
+                        </select>
+                        
+                        </div>
+                    </div> </h6>
+      </div>
+      
+    </div>
+  </div>
+</div> -->
+<!-- <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered text-gray-900" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Month
+            / Work From Home Count </th>
+           
+        </thead>
+        
+        <tbody>
+          <?php foreach($data['total_monthly_wfh'] as $total_monthly_wfh){?>
+
+            
+          <tr>
+            <td><?php echo $total_monthly_wfh->month?>, <?php echo $total_monthly_wfh->wfh_count?> </td>
+            
+            
+            <td>
+              
+              
+           </td>
+          </tr>  
+
+
+          <?php } ?> 
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> -->
+<div class="card-body">
+<label>Month Work From Home</label><label style="color:red">*</label>
+                        <select class="form-control" required="" id="" name="" required>
+                        <option value="">Select Month</option>   
+          <?php foreach($data['total_monthly_wfh'] as $total_monthly_wfh){?>
+
+           
+            <option value="<?php echo $total_monthly_wfh->id;?>"><?php echo $total_monthly_wfh->month;?>   Work From Home Left - <?php echo $total_monthly_wfh->wfh_count;?></option>
+            <?php } ?>
+                        </select>
+                        <input type="submit" name="submit" value="Select Month">
+
+         
+       
+  </div>
+</div>
+
 
             
   <div class="card-body">
@@ -91,7 +188,3 @@ $message = $this->session->flashdata('work_from_home');
     </div>
   </div>
 </div>
-  
-
-
-
